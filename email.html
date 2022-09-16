@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Eval 1 | Form</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        
+   function checkmail(){
+    strRegExp = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+    val=document.getElementById("mail").value.trim();
+    input=document.getElementById("mail");
+
+    if(document.getElementById("mail").value.trim().length == 0){
+       input.classList.add("fail");
+       input.classList.remove("success");
+        document.getElementById("ermail").innerHTML="Field cannot be Empty";
+    }
+        else if(!val.match(strRegExp)){
+           input.classList.remove("success");
+        input.classList.add("fail");
+        document.getElementById("ermail").innerHTML = "Incorrect Format";
+        }
+    else{
+        input.classList.remove("fail");
+        input.classList.add("success");
+        document.getElementById("ermail").innerHTML="";
+    }
+}
+function checkall(){
+        checkfn();
+        checkln();
+        checkmail();
+}
+    </script>
+
+</head>
+<body>
+    Email :
+        <br/>
+        <input type="text" id="mail" oninput="checkmail()" placeholder="Enter your Email Address">
+        <div id="ermail">
+        </div>
+        <br/>
+        <b>Applicant Information : </b>
+        <br/>
+        <br/>
+        <table >
+            <thead>
+              <tr>
+                <td></td>
+                <td>Upper 1 to 2%</td>
+                <td>Upper 10%</td>
+                <td>Upper 25%</td>
+                <td>Upper 50%</td>
+                <td>Lower Half</td>
+                <td>No Basis for Judgement</td>
+              </tr>
+            </thead>
+            <tbody style="line-height:1.5 ;">
+              <tr>
+                <td>Academic Performance</td>
+                <td><input type="radio"  name="ap1" id="ap1"/></td>
+                <td><input type="radio"  name="ap1" id="ap2"/></td>
+                <td><input type="radio"  name="ap1" id="ap3"/></td>
+                <td><input type="radio"  name="ap1" id="ap4"/></td>
+                <td><input type="radio"  name="ap1" id="ap5"/></td>
+                <td><input type="radio"  name="ap1" id="ap6"/></td>
+              </tr>
+                  <tr>
+                <td>Intellectual Ability</td>
+                <td><input type="radio"  name="ia1" id="ia1"/></td>
+                <td><input type="radio" name="ia1" id="ia2"/></td>
+                <td><input type="radio" name="ia1" id="ia3"/></td>
+                <td><input type="radio" name="ia1" id="ia4"/></td>
+                <td><input type="radio" name="ia1" id="ia5"/></td>
+                <td><input type="radio" name="ia1" id="ia6"/></td>
+              </tr>
+                  <tr>
+                <td>Ability to Express Him/Herself</td>
+                <td><input type="radio" name="atoe1" id="atoe1"/></td>
+                <td><input type="radio" name="atoe1" id="atoe2"/></td>
+                <td><input type="radio" name="atoe1" id="atoe3"/></td>
+                <td><input type="radio" name="atoe1" id="atoe4"/></td>
+                <td><input type="radio" name="atoe1" id="atoe5"/></td>
+                <td><input type="radio" name="atoe1" id="atoe6"/></td>
+            </tr>
+            <tr>
+                <td>Motivation for Proposed Field of Study</td>
+                <td><input type="radio" name="mfpfos1" id="mfpfos1"/></td>
+                <td><input type="radio" name="mfpfos1" id="mfpfos2"/></td>
+                <td><input type="radio" name="mfpfos1" id="mfpfos3"/></td>
+                <td><input type="radio" name="mfpfos1" id="mfpfos4"/></td>
+                <td><input type="radio" name="mfpfos1" id="mfpfos5"/></td>
+                <td><input type="radio" name="mfpfos1" id="mfpfos6"/></td>
+            </tr>
+          </tbody>
+        </table>
+        <br/>
+        Would you admit the applicant in your department?<br/><br/>
+        <input type="radio"  name="r1" id="r1">
+        <label>Assuredly</label><br/>
+        <input type="radio" name="r1" id="r2">
+        <label>Probably</label><br/>
+        <input type="radio" name="r1" id="r3">
+        <label>Possibly</label><br/>
+        <input type="radio" name="r1" id="r4">
+        <label>No</label>
+        <br/>
+        <h3 style="color:red; font-family: 'Times New Roman', Times, serif;">Submission</h3>
+        <p style="line-height: 1.5;">Access to recommendations is restricted to admitted students, and only after enrollment in this application's academic program.
+        In place of your signature, please type your full legal name: <input type="text"></p>
+        <input type="submit" value="Click"> &nbsp;  <input type="submit" value="Save for Later"> &nbsp; <input type="submit" value="Display">
+    </form>
+</body>
+</html> 

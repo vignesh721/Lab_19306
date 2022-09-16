@@ -1,0 +1,80 @@
+<!DOCTYPE Application SYSTEM "evaluation1.dtd">
+<Application>
+    <Applicant>B VIGNESH</Applicant>
+    <ApplyingTo>Stony Brook university office of Graduate and Health Sciences Adminssion</ApplyingTo>
+    <Recommender>Senthil Kumar T</Recommender>
+    
+    <Recommenderinfo>
+        <prefix>Dr</prefix>
+        <FirstName>Senthilkumar</FirstName>
+        <LastName>T</LastName>
+        <Organization>Amrita Vishwa Vidyapeetham</Organization>
+        <Title>Associate Professor</Title>
+        <Relationship>Assosciate professor</Relationship>
+        <Telephone>9876543210</Telephone>
+        <Email>t_senthilkumar@gmail.com</Email>
+    </Recommenderinfo>
+    
+    <Applicantinfo>
+        <AcademicPerformance>Upper 1 to 2%</AcademicPerformance>
+        <IntellectualAbility>Upper 10%</IntellectualAbility>
+        <AbilitytoExpress>Upper 1 to 2%</AbilitytoExpress>
+        <MotivationforStudy>Upper 1 to 2%</MotivationforStudy>
+    </Applicantinfo>
+    
+    <Wouldyouadmit>Assuredly</Wouldyouadmit>
+    
+    <Signature>Senthil Kumar T</Signature>
+</Application>
+
+<?xml version="1.0"?>
+<applicationform application_date="16/09/2022">
+    <address country="India">
+        <name>Vignesh</name>
+        <street>Ettimadai</street>
+        <city>Coimbatore</city>
+        <state>TN</state>
+        <zip>643003</zip>
+    </address>
+    <permenantAddress country="India">
+        <name>Vignesh</name>
+        <street>Ettimadai</street>
+        <city>Coimbatore</city>
+        <state>TN</state>
+        <zip>643003</zip>
+    </permenantAddress>
+    <hobbies>Basketball</hobbies>
+    <entranceMark>75</entranceMark>
+    <exam1 name="Physics">
+        <duration>3hrs</duration>
+        <maxMarks>100</maxMarks>
+        <marksAwarded>80</marksAwarded>
+    </exam1>
+    <exam1 name="Chemistry">
+        <duration>3hrs</duration>
+        <maxMarks>100</maxMarks>
+        <marksAwarded>85</marksAwarded>
+    </exam1>
+</applicationform>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/TR/WD-xsl">
+    <xsl:template match="/">
+        <HTML>
+            <BODY>
+                <table border="2" bgcolor="yellow">
+                    <xsl:for-each select = "records/ApplicationForm">
+                        <tr>
+                            <td><xsl:value-of select="Address/Name"/></td>
+                            <td><xsl:value-of select="Address/Hobbies"/></td>
+                            <xsl:for-each select = "EntranceMark/Exam1">
+                                <td><xsl:value-of select="MarksAwarded"/></td>
+                            </xsl:for-each>
+                        </tr>
+                    </xsl:for-each>
+                </table>
+            </BODY>
+        </HTML>
+    </xsl:template>
+</xsl:stylesheet>

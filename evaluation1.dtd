@@ -1,0 +1,104 @@
+<!ELEMENT Application (Applicant,ApplyingTo,Recommender,Recommenderinfo,Applicantinfo,Wouldyouadmit,Signature)>
+<!ELEMENT Applicant (#PCDATA)>
+<!ELEMENT ApplyingTo (#PCDATA)>
+<!ELEMENT Recommender (#PCDATA)>
+
+<!ELEMENT Recommenderinfo (prefix,FirstName,LastName,Organization,Title,Relationship,Telephone,Email)>
+<!ELEMENT prefix (#PCDATA)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT Organization (#PCDATA)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Relationship (#PCDATA)>
+<!ELEMENT Telephone (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+
+<!ELEMENT Applicantinfo (AcademicPerformance,IntellectualAbility,AbilitytoExpress,MotivationforStudy)>
+<!ELEMENT AcademicPerformance (#PCDATA)>
+<!ELEMENT IntellectualAbility (#PCDATA)>
+<!ELEMENT AbilitytoExpress (#PCDATA)>
+<!ELEMENT MotivationforStudy (#PCDATA)>
+<!ELEMENT Wouldyouadmit (#PCDATA)>
+<!ELEMENT Signature (#PCDATA)>
+
+
+lexer grammar hello;
+
+PROGRAM : ('program');
+ARRAY : ('array');
+RECORD : ('record');
+CONST : ('const');
+SET : ('set');
+TYPE : ('type');
+BEGIN : ('begin');
+END : ('end');
+VAR : ('var');
+MOD : ('mod');
+IF : ('if');
+ELSE : ('else');
+NOT : ('not');
+FOR : ('for');
+DO : ('do');
+WHILE : ('while');
+THEN : ('then');
+REPEAT : ('repeat');
+TO : ('to');
+UNTIL : ('until');
+WITH : ('with');
+BREAK : ('break');
+NEW : ('new');
+PRINT : ('writeln');
+INTEGER : ('integer');
+REAL : ('real');
+CHARACTER : ('string');
+BOOLEAN : ('boolean');
+CASE : ('case');
+DOWNTO : ('downto')
+FILE : ('file')
+FUNCTION : ('function')
+GOTO : ('goto')
+IN : ('in')
+LABEL : ('label')
+NIL : ('nil')
+OF : ('of')
+OR : ('or')
+PACKED : ('packed')
+PROCEDURE : ('procedure')
+ADD : ('+');
+SUB : ('-');
+MUL : ('*');
+DIV : ('/' | 'div');
+MODULO : ('%');
+EQ : ('=');
+NTEQ : ('<>');
+GTEQ : ('>=');
+LTEQ : ('<=');
+LT : ('<');
+GT : ('>');
+ASSIGN : ('=');
+SCOMMENT : ('{')([A-Za-z]| '0'..'9'|'_'| ' ')*('}');
+MCOMMENT : ('(')([A-Za-z]| '0'..'9'|'_'| ' ' | [\n\r\t])('*)');
+LPAREN: ('(');
+RPAREN: (')');
+LCURL : ('{');
+RCURL : ('}');
+LSQR: ('[');
+RSQR: (']');
+SEP : (',');
+SEMICOLON : (';');
+DOT : ('.');
+COLON : (':');
+HASH : ('#');
+DOLLAR : ('$');
+PRECED : ('^');
+UPPRECED : ('^^');
+BOOLEAN_OP : ('and' | 'and then' | 'or' | 'or else' | 'not');
+BITWISE_OP : ('&' | '|' | '!' | '~' | '<<' | '>>');
+KEYWORDS : ('case' | 'downto' | 'file' | 'function' | 'goto' | 'in' | 'label' | 'nil' | 'of' | 'or' | 'packed' | 'procedure');
+BOOLEAN_VALUES : ('true' | 'false');
+String : ('\'')([A-Za-z]| '0'..'9'|'_'| ' ' | [\n\r\t])*('\'');
+SYMBOLS : ('?'|'@'|'_'|'\''|'"');
+ESCAPES : ('\\')('a'|'b'|'f'|'n'|'r'|'t'|'v'|'\''|'"');
+ID : [A-Za-z]([A-Za-z]| '0'..'9'|'_')*;
+NUM : ('0'..'9')+;
+WS : [ \r\n\t]+ -> skip;

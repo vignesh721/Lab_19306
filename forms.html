@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Eval 1 | Form</title>
+    <link rel="stylesheet" href="style2.css">
+    
+<script>
+        
+function checkfn(){
+    strRegExp = /^[A-Za-z]+$/;
+    val=document.getElementById("name1").value.trim();
+    input=document.getElementById("name1");
+
+    if(document.getElementById("name1").value.trim().length == 0){
+       input.classList.add("fail");
+       input.classList.remove("success");
+        document.getElementById("fn").innerHTML="Field cannot be Empty";
+    }
+        else if(!val.match(strRegExp)){
+        input.classList.remove("success");
+        input.classList.add("fail");
+        document.getElementById("fn").innerHTML = "Only Alphabets";
+        }
+    else{
+        input.classList.remove("fail");
+        input.classList.add("success");
+        document.getElementById("fn").innerHTML="";
+
+    }
+}
+function checkln(){
+    strRegExp = /^[A-Za-z]+$/;
+    val=document.getElementById("name2").value.trim();
+    input=document.getElementById("name2");
+
+    if(document.getElementById("name2").value.trim().length == 0){
+       input.classList.add("fail");
+       input.classList.remove("success");
+        document.getElementById("ln").innerHTML="Field cannot be Empty";
+    }
+        else if(!val.match(strRegExp)){
+           input.classList.remove("success");
+        input.classList.add("fail");
+        document.getElementById("ln").innerHTML = "Only Alphabets";
+        }
+    else{
+        input.classList.remove("fail");
+        input.classList.add("success");
+        document.getElementById("ln").innerHTML="";
+    }
+}
+</script>
+
+</head>
+<body>
+    <form name="form1" action="index.html" onsubmit="checkfn()">
+        <h1>Recommendation</h1>
+        <div style="background-color: lightgrey; line-height: 1.8;">
+         <b>Applicant :</b> B VIGNESH<br/>
+         <b>Applying to :</b> Stony Brook University Office of Graduate and Health Sciences Admissions.<br/>
+         <b>Recommender :</b> Senthilkumar T<br/>
+        </div>
+        <h3 style="color:red; font-family: 'Times New Roman', Times, serif;">Applicant Information</h3>
+        <b>Applicant Name : B VIGNESH</b><br/>
+        <p>Do you wish to waive your right to examine this letter of recommendation?</p>
+        <p style="line-height:1.5 ;"><b>[X]I waive my right to access this report.</b><br/>
+        [  ]I do not waive my right to access this report.<br/>
+        </p>
+        <p>Signed by: B Vigneshhhhhh</p>
+        <b>Recommender Information</b>
+        <br/>
+        <br/>
+        Prefix:
+        <br/>
+        <select name="" id="expertise">
+            <option value="Dr.">Dr.</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Ms.">Ms.</option>
+          </select>
+          <br/><br/>
+        First Name :
+        <br/>
+        <input type="text" id="name1" oninput="checkfn()" placeholder="Enter your first name">
+        <div id="fn">
+        </div>
+        <br/>
+  
+        Last Name :
+        <br/>
+        <input type="text" id="name2" oninput="checkln()" placeholder="Enter your last name">
+        <div id="ln">
+        </div>
+        <br/>
+
+        Organization :
+        <br/>
+        <input type="text" placeholder="Enter your organization">
+        <br/>
+        <br/>
+        Title :
+        <br/>
+        <input type="text" placeholder="Enter the title">
+        <br/>
+        <br/>
+        Relationship to student :
+        <br/>
+        <input type="text" placeholder="Enter the relationship to student">
+        <br/>
+        <br/>
+        Telephone :
+        <br/>
+        <input type="text" placeholder="Enter your telephone number">
+        <br/>
+        <br/>
+        </form>
+</body>
+</html>
